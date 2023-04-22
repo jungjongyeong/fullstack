@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)http://localhost:8090/menu1.do -->
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" id="viewPort" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<meta name="description" content="관리자 홈페이지">
+	<meta name="keywords" content="keywords, keywords">
+	<meta name="format-detection" content="telephone=no">
+	<meta property="og:title" content="">
+	<meta property="og:type" content="">
+	<meta property="og:url" content="">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="common/img/common/.png">
+	<!-- Chrome, Safari, IE -->
+	<link rel="shortcut icon" href="#">
+	<!-- Firefox, Opera -->
+	<link rel="icon" href="#">
+	<title>관리자페이지</title>
+	<!-- html5shiv support of HTML5 -->
+	<!--[if lt IE 9]>
+    <script src="common/js/plugin/html5shiv.js"></script>
+	<![endif]-->
+
+	
+	<!-- common css -->
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/chart.min.css">
+
+	
+
+	<style type="text/css">
+		/* Chart.js */
+		@keyframes chartjs-render-animation {
+			from {
+				opacity: .99
+			}
+
+			to {
+				opacity: 1
+			}
+		}
+
+		.chartjs-render-monitor {
+			animation: chartjs-render-animation 1ms
+		}
+
+		.chartjs-size-monitor,
+		.chartjs-size-monitor-expand,
+		.chartjs-size-monitor-shrink {
+			position: absolute;
+			direction: ltr;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			overflow: hidden;
+			pointer-events: none;
+			visibility: hidden;
+			z-index: -1
+		}
+
+		.chartjs-size-monitor-expand>div {
+			position: absolute;
+			width: 1000000px;
+			height: 1000000px;
+			left: 0;
+			top: 0
+		}
+
+		.chartjs-size-monitor-shrink>div {
+			position: absolute;
+			width: 200%;
+			height: 200%;
+			left: 0;
+			top: 0
+		}
+	</style>
+</head>
+
+<body data-gr-c-s-loaded="true">
+	<div id="wrap">
+		<!-- header -->
+		<header id="header" class="main">
+			<h1 class="logo"><a href="#"><img src="image/img_logo02.png" alt="Hanqea logo image"></a></h1>
+			<div class="dib fs-12 va-m"><i class="ico-user"></i>안녕하세요 관리자님</div>
+			<div class="btn_wrap dib va-m">
+				<button type="button" class="btn type01 bookmark">즐겨찾기</button>
+				<button type="button" class="btn type01 logout">로그아웃</button>
+				<button type="button" class="btn type01 store"><span><a href="https://cafe.naver.com/amunamuna"
+							target="_blank">한큐에자바 바로가기</a></span></button>
+			</div>
+			<!-- gnb -->
+			<ul id="gnb" class="clearfix">
+				<li><a href="#">수강생 수료 현황</a></li>				
+			</ul>
+			<!--// gnb -->
+		</header>
+		<!--// header -->
+		<section id="container">
+			<!-- lnb -->
+			<nav id="lnb">
+				<button type="button" class="btn btn-lnb"><i class="ico-arr-left01"></i><span
+						class="hidden"></span></button>
+				<div class="scrollbar-inner">
+					<ul class="depth1">
+						<li class="on">
+							<div>
+								<a href="javascript:;">수강생 수료 현황</a>
+							</div>
+							<ul class="depth2">
+								<li>
+									<div>
+										<a href="#">메뉴1</a>
+										<button type="button" class="btn-bookmark"><span
+												class="hidden">즐겨찾기</span></button>
+									</div>
+								</li>
+								<li>
+									<div>
+										<a href="#">메뉴2</a>
+										<button type="button" class="btn-bookmark"><span
+												class="hidden">즐겨찾기</span></button>
+									</div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<!--// lnb -->
+			<!-- contents -->
+			<div id="contents">
+				<!-- 컨텐츠 -->
+				<div class="content_wrap">
+					<script>
+						var config = {
+							type: 'pie',
+							data: {
+								datasets: [{
+									data: [1, 3, 2, 1],
+									backgroundColor: [
+										window.chartColors.red,
+										window.chartColors.yellow,
+										window.chartColors.green,
+										window.chartColors.blue,
+									],
+									label: 'Dataset 1'
+								}],
+								labels: [
+									'생존전략',
+									'Yellow',
+									'Green',
+									'Blue'
+								]
+							},
+							options: {
+								responsive: true
+							}
+						};
+
+						window.onload = function () {
+							var ctx = document.getElementById('chart-area').getContext('2d');
+							window.myPie = new Chart(ctx, config);
+						};
+
+					</script>
+					<h2 class="fs-18 fw-b">수강생 현황 차트</h2>
+					<div id=" canvas-holder" style="width:40%">
+						<div class="chartjs-size-monitor">
+							<div class="chartjs-size-monitor-expand">
+								<div class="">
+								</div>
+							</div>
+							<div class="chartjs-size-monitor-shrink">
+								<div class="">
+								</div>
+							</div>
+						</div>
+						<canvas id="chart-area" style="display: block; height: 242px; width: 484px;" width="605"
+							height="302" class="chartjs-render-monitor"></canvas>
+				</div>
+
+				<h2 class="fs-18 fw-b">수강생 테이블</h2><br>
+
+				<table class="tbl type02">
+					<colgroup>
+						<col style="width:10%;">
+						<col style="width:20%;">
+						<col style="width:20%;">
+						<col style="width:20%;">
+						<col style="width:20%;">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">순번</th>
+							<th scope="row">이름</th>
+							<th scope="row">나이</th>
+							<th scope="row">닉네임</th>
+							<th scope="row">신청한수업</th>
+						</tr>
+						<tr>
+							<td class="ta-c">1</td>
+							<td class="ta-c">한큐</td>
+							<td class="ta-c">25</td>
+							<td class="ta-c">hanq</td>
+							<td class="ta-c">Yellow</td>
+						</tr>
+						<tr>
+							<td class="ta-c">2</td>
+							<td class="ta-c">두큐</td>
+							<td class="ta-c">26</td>
+							<td class="ta-c">twoq</td>
+							<td class="ta-c">생존전략</td>
+						</tr>
+						<tr>
+							<td class="ta-c">3</td>
+							<td class="ta-c">석삼</td>
+							<td class="ta-c">27</td>
+							<td class="ta-c">suksam</td>
+							<td class="ta-c">Green</td>
+						</tr>
+						<tr>
+							<td class="ta-c">4</td>
+							<td class="ta-c">너구리</td>
+							<td class="ta-c">28</td>
+							<td class="ta-c">youcu</td>
+							<td class="ta-c">Yellow</td>
+						</tr>
+						<tr>
+							<td class="ta-c">5</td>
+							<td class="ta-c">오징어</td>
+							<td class="ta-c">29</td>
+							<td class="ta-c">jing-a</td>
+							<td class="ta-c">Yellow</td>
+						</tr>
+						<tr>
+							<td class="ta-c">6</td>
+							<td class="ta-c">육개장</td>
+							<td class="ta-c">30</td>
+							<td class="ta-c">sixdog</td>
+							<td class="ta-c">Green</td>
+						</tr>
+						<tr>
+							<td class="ta-c">7</td>
+							<td class="ta-c">칠면조</td>
+							<td class="ta-c">31</td>
+							<td class="ta-c">seven</td>
+							<td class="ta-c">Blue</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		</section>
+		<footer id="footer" class="ui-tbl-row">
+			<p class="fs-12 c-g02 ta-r">Copyrightⓒ 2020 HANQEA. All Rights Reserved.</p>
+		</footer>
+	</div>
+</body>
+
+	<!-- common js -->
+	<script src="js/jquery-2.2.4.min.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/chart.min.js"></script>
+	<script src="js/utils.js"></script>
+</html>
